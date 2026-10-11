@@ -1,0 +1,68 @@
+---
+title: StructMark V1.1 功能測試
+lang: zh-TW
+version: "1.1"
+---
+
+#1 文件示例 (#start)
+
+StructMark 的行內格式：*[粗體]、/[斜體]、/*[粗斜體]。
+
+#2 清單
+
+10. 第一項
+    第二行接續內容。
+11. 第二項
+
+- 上層
+  - 子清單
+
+- [o] 已完成
+- [ ] 未完成
+
+#2 文件參照
+
+回到 &ref[start]。
+
+&note[title="巢狀示例"]
+&warning
+內層警告。
+&end
+
+外層繼續。
+&end
+
+#2 JSON 結構化表格
+
+&table[format=json #tbl:experiment]
+{
+  "columns": ["編號", "測量一", "測量二"],
+  "rows": [
+    [{"text":"A", "rowspan":2}, "1.0", "2.0"],
+    ["1.2", "2.3"],
+    [{"text":"全部合併", "colspan":3}]
+  ]
+}
+&end
+
+#2 原始內容
+
+&raw
+這是一行 &note 原文。
+\&end
+這一行仍在 raw 中。
+&end
+
+#2 行內擴充
+
+速度單位 &science:unit[m/s] 尚未載入語義擴充時，仍需保留名稱與內容。
+
+#2 數學
+
+$E=mc^[2]$
+
+&equation[#eq:energy]
+E=mc^[2]
+&end
+
+&ref[eq:energy]

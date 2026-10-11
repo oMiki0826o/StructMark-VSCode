@@ -1,0 +1,25 @@
+{
+  "scopeName": "source.structmark",
+  "patterns": [
+    {
+      "name": "markup.heading.structmark",
+      "match": "^\\s*#[1-6]\\s+.*$"
+    },
+    {
+      "name": "keyword.control.directive.structmark",
+      "match": "&[a-z][a-z0-9_:]*"
+    },
+    {
+      "name": "markup.bold.structmark",
+      "match": "\\*\\[[^\\]\\n]*\\]"
+    },
+    {
+      "name": "markup.italic.structmark",
+      "match": "/\\[[^\\]\\n]*\\]"
+    },
+    {
+      "name": "comment.line.structmark",
+      "match": "^\\s*%%.*$"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+---
+title: Language Specification
+lang: zh-TW
+version: "1.1"
+bibliography: references.bib
+citation-style: apa-7
+---
+
+#1 文件標題
+
+這是一套自行設計的標記語言。
+
+#2 文字格式 (#format)
+
+*[粗體]
+
+/[斜體]
+
+/*[粗斜體]
+
+-[底線]
+
+~[刪除線]
+
+=[螢光標記]
+
+*[粗體包含 /[斜體] 與 =[標記]]
+
+#2 數學
+
+x^[2]
+
+H_[2]O
+
+$E=mc^[2]$
+
+#2 清單
+
+- Apple
+- Banana
+
+. 第一項
+. 第二項
+
+- [o] 已完成
+- [ ] 未完成
+
+#2 連結與圖片
+
+[GitHub](https://github.com)
+
+![M42 星雲](m42.jpg)[#fig:m42 width=600]
+
+#2 行內指令
+
+按下 &kbd[Ctrl+C] 複製。
+
+參考 &ref[fig:m42]。
+
+#2 提示區塊
+
+&note[title="補充資訊"]
+這是一段補充說明。
+
+&warning
+可使用 *[巢狀格式]。
+&end
+
+&end
+
+#2 表格
+
+| Name | Version |
+|---|---|
+| StructMark | 1.0 |
+
+#2 結構化表格
+
+&table[format=csv #tbl:projects]
+Name,Version
+StructMark,1.0
+&end
+
+#2 公式
+
+&equation[#eq:energy]
+E=mc^[2]
+&end
+
+#2 程式碼
+
+```python
+print("Hello World")
+```
+
+#2 註腳
+
+這是一段具有註腳的文字[^1]。
+
+[^1]: 這是註腳內容。
+
+#2 學術引用
+
+相關研究參考 [&smith2024]。
+
+#2 註解
+
+%%這段內容不會呈現在輸出文件中%%

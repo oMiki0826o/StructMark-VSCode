@@ -1,0 +1,19 @@
+# Dependencies and build output
+node_modules/
+dist/
+out/
+*.vsix
+.vscode-test/
+
+# Local runtime and AI collaboration records
+data/
+
+# Logs and local environment
+*.log
+.env
+.env.*
+!.env.example
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

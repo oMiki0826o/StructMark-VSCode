@@ -1,0 +1,63 @@
+{
+  "name": "structmark-language-core",
+  "version": "1.6.0",
+  "type": "module",
+  "description": "StructMark language core with TypeScript lexer, parser, AST, and safe HTML rendering; no editor.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oMiki0826o/StructMark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oMiki0826o/StructMark/issues"
+  },
+  "homepage": "https://omiki0826o.github.io/StructMark/",
+  "files": [
+    "dist",
+    "bin",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "docs",
+    "examples"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "fuzz": "npm run build && node scripts/fuzz.mjs",
+    "benchmark:tokens": "python3 benchmark/tokens.py",
+    "benchmark:perf": "npm run build && node scripts/perf.mjs",
+    "demo": "npm run build && node scripts/demo.mjs",
+    "check": "npm test && npm run fuzz",
+    "prepublishOnly": "npm run build && npm test",
+    "cli": "npm run build && node bin/structmark.mjs",
+    "test:cli": "npm run build && node --test tests/cli-v13.test.mjs tests/v13-integration.test.mjs",
+    "docs:check": "npm run build && node scripts/docs-check.mjs",
+    "docs:export": "npm run build && node scripts/docs-check.mjs --export"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "katex": "^0.16.47",
+    "yaml": "^2.9.1"
+  },
+  "bin": {
+    "structmark": "./bin/structmark.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

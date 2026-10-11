@@ -1,0 +1,3 @@
+#1 子文件 (#part)
+
+請參考 &ref[../index.sm#intro]；同文件標題則可使用 &ref[part]。

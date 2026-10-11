@@ -1,0 +1,33 @@
+name: Validate VS Code project
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            packages/language-server/package-lock.json
+            packages/vscode/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm ci
+        working-directory: packages/language-server
+      - run: npm run build
+        working-directory: packages/language-server
+      - run: npm ci
+        working-directory: packages/vscode
+      - run: npm run build
+        working-directory: packages/vscode

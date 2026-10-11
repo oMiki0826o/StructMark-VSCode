@@ -1,0 +1,18 @@
+{
+  "Heading": {
+    "prefix": "h1",
+    "body": [
+      "#1 ${1:標題}"
+    ],
+    "description": "StructMark heading"
+  },
+  "Note": {
+    "prefix": "note",
+    "body": [
+      "&note[title=\"${1:提示}\"]",
+      "${2:內容}",
+      "&end"
+    ],
+    "description": "Note block"
+  }
+}

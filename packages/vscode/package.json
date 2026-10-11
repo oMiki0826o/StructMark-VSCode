@@ -1,0 +1,56 @@
+{
+  "name": "structmark-vscode",
+  "displayName": "StructMark",
+  "description": "StructMark editor support",
+  "version": "1.6.0",
+  "private": true,
+  "publisher": "omiki0826o",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:structmark"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "structmark",
+        "aliases": [
+          "StructMark"
+        ],
+        "extensions": [
+          ".sm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "structmark",
+        "scopeName": "source.structmark",
+        "path": "./syntaxes/structmark.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "structmark",
+        "path": "./snippets/structmark.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.8.3"
+  }
+}
