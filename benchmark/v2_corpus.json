@@ -1,0 +1,23 @@
+[
+  {
+    "id":"warning",
+    "notes":"One warning with a title and body",
+    "markdown":"> **注意事項**\n> 這是警告內容。",
+    "atdoc":"@callout(warning)[注意事項]\n這是警告內容。\n@end",
+    "structmark":"&w[注意事項]\n這是警告內容。\n&e"
+  },
+  {
+    "id":"table",
+    "notes":"Small table with column names and two data rows",
+    "markdown":"| 名稱 | 數量 |\n| --- | --- |\n| A | 12 |\n| B | 16 |",
+    "atdoc":"@table[@cols[名稱,數量] @data[[A,12],[B,16]]]",
+    "structmark":"&tbl\n[名稱][數量]\n[A][12]\n[B][16]\n&e"
+  },
+  {
+    "id":"reference",
+    "notes":"Heading with a stable target and one reference",
+    "markdown":"# 結論 {#result}\n\n請參考 [結論](#result)。",
+    "atdoc":"@heading(1)[結論]{#result}\n@paragraph[請參考 @link(#result)[結論]。]",
+    "structmark":"#1 結論 (#result)\n請參考 (#result)。"
+  }
+]

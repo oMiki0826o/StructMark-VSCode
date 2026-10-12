@@ -1,0 +1,10 @@
+id,format,characters,utf8_bytes,tokens_cl100k_base,tokens_o200k_base
+warning,markdown,20,42,19,13
+warning,atdoc,36,58,22,16
+warning,structmark,19,41,18,12
+table,markdown,47,55,26,25
+table,atdoc,41,49,25,21
+table,structmark,32,40,21,18
+reference,markdown,34,50,28,18
+reference,atdoc,60,76,36,27
+reference,structmark,30,42,21,14

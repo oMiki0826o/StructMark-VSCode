@@ -17,3 +17,7 @@ Document the project architecture, main entry points, and test commands here. Av
 ## Validation and reporting
 
 Report commands actually executed and their outcomes. Do not claim tests or integration checks that were not performed.
+
+## StructMark v2.0.0-rc.1
+
+新開發的語法契約以 `docs/STRUCTMARK_V2_LANGUAGE_CONTRACT.md` 為準；v2 僅能使用 `src/v2/index.mjs` 公開入口。執行 `npm run check:v2`，並依 `docs/STRUCTMARK_V2_RELEASE_GATES.md` 驗證；不可將既有 v1.6 API 擅自改成 v2 或宣稱尚未執行的測試通過。

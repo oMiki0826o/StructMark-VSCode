@@ -1,0 +1,62 @@
+[
+  {
+    "id": "basic",
+    "description": "簡單標題與三種格式",
+    "markdown": "# 標題\n\n**粗體**、*斜體*、~~刪除~~。",
+    "structmark": "#1 標題\n\n*[粗體]、/[斜體]、~[刪除]。"
+  },
+  {
+    "id": "inline",
+    "description": "行內語義按鍵",
+    "markdown": "按下 <kbd>Ctrl+C</kbd> 複製。",
+    "structmark": "按下 &kbd[Ctrl+C] 複製。"
+  },
+  {
+    "id": "math",
+    "description": "文字下標、行內 LaTeX",
+    "markdown": "化學式 H<sub>2</sub>O，能量 $E=mc^2$。",
+    "structmark": "化學式 H_[2]O，能量 $E=mc^[2]$。"
+  },
+  {
+    "id": "heading",
+    "description": "帶 ID 的標題；Markdown 需支援屬性擴充",
+    "markdown": "## 紅石系統 {#redstone}\n\n[閱讀](#redstone)",
+    "structmark": "#2 紅石系統 (#redstone)\n\n[閱讀](#redstone)"
+  },
+  {
+    "id": "images",
+    "description": "圖片大小；Markdown 需支援屬性擴充",
+    "markdown": "![星雲](m42.jpg){width=600}",
+    "structmark": "![星雲](m42.jpg)[width=600]"
+  },
+  {
+    "id": "list",
+    "description": "任務清單、自動有序清單",
+    "markdown": "- [x] 完成\n- [ ] 未完成\n\n1. A\n2. B",
+    "structmark": "- [o] 完成\n- [ ] 未完成\n\n. A\n. B"
+  },
+  {
+    "id": "table",
+    "description": "GFM 簡單表格相同寫法",
+    "markdown": "| Name | Value |\n|---|---|\n| A | 1 |",
+    "structmark": "| Name | Value |\n|---|---|\n| A | 1 |"
+  },
+  {
+    "id": "quote",
+    "description": "引用與程式碼共同採用熟悉寫法",
+    "markdown": "> 一段引用。\n\n```python\nprint(1)\n```",
+    "structmark": "> 一段引用。\n\n```python\nprint(1)\n```"
+  },
+  {
+    "id": "note",
+    "description": "GFM Alert 與 @note 的簡單語義區塊",
+    "markdown": "> [!NOTE]\n> 請先備份。",
+    "structmark": "&note\n請先備份。\n&end"
+  },
+  {
+    "id": "citation",
+    "description": "Pandoc 引文與 StructMark 相同語義形式",
+    "markdown": "研究參考 [@smith2024]。",
+    "structmark": "研究參考 [@smith2024]。"
+  }
+]

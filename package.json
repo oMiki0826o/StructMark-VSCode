@@ -1,8 +1,8 @@
 {
   "name": "structmark-language-core",
-  "version": "1.6.0",
+  "version": "2.0.0-rc.1",
   "type": "module",
-  "description": "StructMark language core with TypeScript lexer, parser, AST, and safe HTML rendering; no editor.",
+  "description": "StructMark v2 candidate engine and backwards-compatible v1.6 toolchain",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,7 +20,10 @@
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "docs",
-    "examples"
+    "examples",
+    "src/v2",
+    "experimental/v2",
+    "VALIDATION.md"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -28,6 +31,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./v2": {
+      "types": "./src/v2/index.d.mts",
+      "import": "./src/v2/index.mjs"
     }
   },
   "publishConfig": {
@@ -45,7 +52,13 @@
     "cli": "npm run build && node bin/structmark.mjs",
     "test:cli": "npm run build && node --test tests/cli-v13.test.mjs tests/v13-integration.test.mjs",
     "docs:check": "npm run build && node scripts/docs-check.mjs",
-    "docs:export": "npm run build && node scripts/docs-check.mjs --export"
+    "docs:export": "npm run build && node scripts/docs-check.mjs --export",
+    "test:v2": "node --test experimental/v2/tests/*.test.mjs",
+    "cli:v2": "node bin/sm2.mjs",
+    "test:v2:cli": "node --test experimental/v2/tests/cli.test.mjs",
+    "check:v2": "npm run test:v2 && npm run fuzz:v2 && node scripts/validate-vscode-assets.mjs",
+    "prepare:vscode": "node scripts/prepare-vscode.mjs",
+    "fuzz:v2": "node scripts/v2-fuzz.mjs"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
@@ -55,7 +68,8 @@
     "yaml": "^2.9.1"
   },
   "bin": {
-    "structmark": "./bin/structmark.mjs"
+    "structmark": "./bin/structmark.mjs",
+    "sm2": "./bin/sm2.mjs"
   },
   "engines": {
     "node": ">=22"

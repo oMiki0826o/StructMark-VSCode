@@ -1,0 +1,30 @@
+#1 StructMark 2.0 資料實例 (#overview)
+
+&n[範例說明]
+同一份文件包含 *[語義區塊]、/[巢狀格式] 與可驗證資料。
+&e
+
+#2 測量資料 (#measurements)
+
+&tbl
+[樣本:string][溫度:number][校正:boolean]
+[A][20.5][true]
+[B][30.0][false]
+&e
+
+&schema[Sample]
+{"id":"string","temperature":"number","valid":"boolean","note?":"string"}
+&e
+
+&data[format=json,schema=Sample]
+{"id":"A","temperature":20.5,"valid":true}
+&e
+
+&c[js]
+const result = {value: 1};
+\&e
+&e
+
+&w[檢查範圍]
+這份文件中的資料僅供示範。完整表格請參考 (#measurements)。
+&e

@@ -1,18 +1,9 @@
 {
-  "Heading": {
-    "prefix": "h1",
-    "body": [
-      "#1 ${1:標題}"
-    ],
-    "description": "StructMark heading"
-  },
-  "Note": {
-    "prefix": "note",
-    "body": [
-      "&note[title=\"${1:提示}\"]",
-      "${2:內容}",
-      "&end"
-    ],
-    "description": "Note block"
-  }
+  "Heading": {"prefix":"smh1","body":["#1 ${1:標題} (#${2:identifier})"],"description":"StructMark heading and identifier"},
+  "Note": {"prefix":"smnote","body":["&n[${1:提示}]","${2:內容}","&e"],"description":"v2 note block"},
+  "Warning": {"prefix":"smwarning","body":["&w[${1:注意事項}]","${2:內容}","&e"],"description":"v2 warning block"},
+  "Table": {"prefix":"smtable","body":["&tbl","[${1:名稱:string}][${2:數值:number}]","[${3:範例}][${4:1}]","&e"],"description":"v2 typed native table"},
+  "Equation": {"prefix":"smeq","body":["&eq","${1:E = mc^2}","&e"],"description":"v2 raw equation"},
+  "Code": {"prefix":"smcode","body":["&c[${1:js}]","${2:console.log('Hello')}","&e"],"description":"v2 raw code"},
+  "Reference": {"prefix":"smref","body":["(#${1:identifier})"],"description":"v2 checked reference"}
 }
